@@ -1,0 +1,5 @@
+.gitCOMMIT_EDITMSG
+.DS_Store
+pkg/*
+*.gem
+.bundle
