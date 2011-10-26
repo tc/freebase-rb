@@ -44,7 +44,7 @@ module Freebase
           final << encoded_val.to_i(16).chr
           i += 5
         else
-          final += mql_raw[i]
+          final << mql_raw[i]
           i += 1
         end
       end
