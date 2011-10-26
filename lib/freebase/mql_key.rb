@@ -13,10 +13,10 @@ module Freebase
         unicoded = ""
         raw.each_char do |c|
           if c.to_s.match MQL_KEY_BODY
-            unicoded += c
+            unicoded << c
           else
             hex_val = get_hex(c)
-            unicoded += hex_val
+            unicoded << hex_val
           end
         end
 
@@ -41,7 +41,7 @@ module Freebase
       while i < mql_raw.length
         if mql_raw[i] == '$'
           encoded_val = mql_raw[i + 1...i + 5]
-          final += encoded_val.to_i(16).chr
+          final << encoded_val.to_i(16).chr
           i += 5
         else
           final += mql_raw[i]
